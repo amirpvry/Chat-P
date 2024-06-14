@@ -1,0 +1,19 @@
+
+{% load static %}
+
+<body>
+    <h1>ضرب در 10</h1>
+    <form action="{% url 'appsample:test'  %}" method="post"> 
+        {% csrf_token %}
+        <label for="number">عدد:</label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit">ضرب</button>
+    </form>
+
+    {% if result %}
+        <p>نتیجه: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
+
+
